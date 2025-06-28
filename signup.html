@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signup</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h2 id="company-name">Company Signup</h2>
+    <form action="signup.php" method="POST" onsubmit="return checkPasswords();">
+      <label for="company">Company Name</label>
+      <input type="text" name="company" id="company" required 
+             oninput="document.getElementById('company-name').textContent = this.value + ' Signup'"/>
+
+      <label for="name">Full Name</label>
+      <input type="text" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" name="email" required />
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required />
+
+      <label for="confirm">Confirm Password</label>
+      <input type="password" id="confirm" required />
+
+      <button type="submit">Sign Up</button>
+    </form>
+    <p class="signup-link">Already have an account? <a href="login.html">Login here</a></p>
+  </div>
+
+  <script>
+    function checkPasswords() {
+      const p1 = document.getElementById("password").value;
+      const p2 = document.getElementById("confirm").value;
+      if (p1 !== p2) {
+        alert("Passwords do not match.");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+ALTER TABLE users ADD company VARCHAR(100);
